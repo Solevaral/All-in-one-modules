@@ -26,7 +26,18 @@
       "preserve": [
         "lists/*-user.txt",
         "utils/game_filter.enabled"
-      ]
+      ],
+      "linux": {
+        "kind": "zapret",
+        "author": "Sergeydigl3",
+        "description": "Обход блокировок Discord и YouTube (zapret-rust от Sergeydigl3): стратегии, Game Filter, автотюн, служба systemd.",
+        "homepage": "https://github.com/Sergeydigl3/zapret-discord-youtube-rust",
+        "source": {
+          "type": "github",
+          "repo": "Sergeydigl3/zapret-discord-youtube-rust",
+          "asset": "zapret-rust-linux-x86_64"
+        }
+      }
     },
     {
       "schema": 2,
@@ -66,6 +77,18 @@
       ],
       "legacyAutostart": {
         "runKey": "TgWsProxy"
+      },
+      "linux": {
+        "kind": "app",
+        "desktop": true,
+        "autostart": true,
+        "icon": "telegram",
+        "source": {
+          "type": "github",
+          "repo": "Flowseal/tg-ws-proxy",
+          "asset": "TgWsProxy_linux_amd64",
+          "saveAs": "TgWsProxy"
+        }
       }
     },
     {
@@ -107,6 +130,17 @@
       },
       "legacyAutostart": {
         "runKey": "TryToCatchMe"
+      },
+      "linux": {
+        "kind": "app",
+        "desktop": true,
+        "categories": "Network;",
+        "source": {
+          "type": "github",
+          "repo": "Solevaral/TryToCatchMe-client",
+          "asset": "TryToCatchMe_*_amd64.AppImage",
+          "saveAs": "TryToCatchMe.AppImage"
+        }
       }
     },
     {
@@ -206,6 +240,9 @@
       "minHostVersion": "0.2.0",
       "source": {
         "type": "none"
+      },
+      "linux": {
+        "kind": "builtin:shutdown-timer"
       }
     }
   ]

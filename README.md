@@ -10,6 +10,19 @@
 2. Минимальная версия All in One — в `minHostVersion`: более старые версии покажут запись, но не установят.
 3. Программа должна поддерживать режим `--hosted` и протокол HostLink. Готовая реализация для .NET — один файл [HostLink.cs](https://github.com/Solevaral/All-in-one/blob/main/docs/reference/HostLink.cs).
 
+## Linux
+
+Этот же каталог читает [All in One for Linux](https://github.com/Solevaral/All-in-one-for-linux). Модуль, у которого есть версия под Linux, описывается необязательным полем `linux`; модули без него All in One for Linux показывает как «нет версии для Linux». Windows-версия поле не читает.
+
+| Поле | Смысл |
+|---|---|
+| `kind` | `app` — программа в `~/.local/share/allinone/modules/<folder>`; `zapret` — zapret-rust в `/opt/allinone/zapret` со службой systemd; `builtin:shutdown-timer` — встроенный таймер |
+| `source` | `repo` (по умолчанию — `source.repo` модуля), `asset` — имя файла в последнем релизе, можно с `*`; `saveAs` — имя файла на диске |
+| `desktop` | Ярлык в меню приложений. У AppImage иконка берётся из неё самой |
+| `autostart` | Автозапуск при входе (пользователь может выключить) |
+| `icon`, `categories`, `args` | Иконка ярлыка (имя из темы), категории меню, аргументы запуска |
+| `description`, `author`, `homepage` | Если под Linux они другие, чем у Windows-версии |
+
 ## Фиксы zapret для игр
 
 `zapret-games.json` — галочки карточки «Игры» на странице zapret (All in One 0.2.5 и новее; `help` — с 0.2.8). All in One загружает файл не чаще раза в 6 часов, записи с тем же `id` заменяют встроенные.
